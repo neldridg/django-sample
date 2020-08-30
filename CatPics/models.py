@@ -6,5 +6,3 @@ from django.contrib.auth.models import User
 class Pic(models.Model):
     image = models.ImageField(upload_to='cats')
     uploaded_date = models.DateTimeField(auto_now=True, null=False)
-    uploaded_by = models.ForeignKey(User, on_delete=models.CASCADE)
-

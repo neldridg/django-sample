@@ -1,7 +1,7 @@
 {% extends 'default_layout.html' %}
 
 {% block content %}
-<div>
-
-</div>
+  {% for pic in pics %}
+    <img src="{{ pic.image.url }}" class="rounded">
+  {% endfor %}
 {% endblock %}
