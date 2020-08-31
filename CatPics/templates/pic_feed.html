@@ -2,15 +2,21 @@
 
 {% block content %}
   <div class="row">
-    {% for pic in pics %}
-      <div class="col-sm-3">
-        <div class="card">
-          <img class="card-img-top" src="{{ pic.image.url }}">
-          <div class="card-body">
-            <p class="card-text"><b>Uploaded on:</b> {{ pic.uploaded_date.date }}</p>
+    {% if pics %}
+      {% for pic in pics %}
+        <div class="col-sm-3">
+          <div class="card">
+            <img class="card-img-top" src="{{ pic.image.url }}">
+            <div class="card-body">
+              <p class="card-text"><b>Uploaded on:</b> {{ pic.uploaded_date.date }}</p>
+            </div>
           </div>
         </div>
+      {% endfor %}
+    {% else %}
+      <div>
+        Nothing here yet!
       </div>
-    {% endfor %}
+    {% endif %}
   </div>
 {% endblock %}
