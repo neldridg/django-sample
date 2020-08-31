@@ -22,7 +22,7 @@ def pic_upload(request):
         form = PicForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('index')
+            return redirect('pic-feed')
     else:
         form = PicForm()
     return render(request, 'pic_upload.html', {
